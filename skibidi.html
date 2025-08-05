@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SKIBIDI TOILET</title>
+  <style>
+    body {
+      background: black;
+      color: lime;
+      font-family: Comic Sans MS, cursive, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    button {
+      font-size: 2rem;
+      padding: 20px 40px;
+      background: hotpink;
+      border: 5px solid white;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 30px cyan;
+    }
+
+    button:hover {
+      background: yellow;
+      color: black;
+      transform: rotate(5deg);
+    }
+  </style>
+</head>
+<body>
+  <h1>💩 SKIBIDI TOILET 💩</h1>
+  <button onclick="skibidi()">🚽 FLUSH THE BUTTON 🚽</button>
+
+  <script>
+    function skibidi() {
+      // Real MP3 from that MyInstants button
+      const audio = new Audio("https://www.myinstants.com/media/sounds/skibidi-toilet.mp3");
+      audio.play();
+
+      // Flash background to random color
+      document.body.style.background = 
+        `hsl(${Math.random() * 360}, 100%, 50%)`;
+
+      // Random flying SKIBIDI text
+      const txt = document.createElement("div");
+      txt.innerText = "SKIBIDI TOILET!!";
+      txt.style.position = "absolute";
+      txt.style.left = `${Math.random() * window.innerWidth}px`;
+      txt.style.top = `${Math.random() * window.innerHeight}px`;
+      txt.style.fontSize = `${Math.random() * 50 + 20}px`;
+      txt.style.color = "white";
+      txt.style.transform = `rotate(${Math.random() * 360}deg)`;
+      txt.style.pointerEvents = "none";
+      document.body.appendChild(txt);
+
+      setTimeout(() => txt.remove(), 1200);
+    }
+  </script>
+</body>
+</html>
